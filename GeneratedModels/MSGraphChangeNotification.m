@@ -15,6 +15,7 @@
 @interface MSGraphChangeNotification()
 {
     NSString* _changeNotificationId;
+    int32_t _sequenceNumber;
     NSString* _subscriptionId;
     NSDate* _subscriptionExpirationDateTime;
     NSString* _clientState;
@@ -39,6 +40,18 @@
 - (void) setChangeNotificationId: (NSString*) val
 {
     self.dictionary[@"id"] = val;
+}
+
+- (int32_t) sequenceNumber
+{
+    _sequenceNumber = [self.dictionary[@"sequenceNumber"] intValue];
+    return _sequenceNumber;
+}
+
+- (void) setSequenceNumber: (int32_t) val
+{
+    _sequenceNumber = val;
+    self.dictionary[@"sequenceNumber"] = @(val);
 }
 
 - (NSString*) subscriptionId

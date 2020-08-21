@@ -14,7 +14,6 @@
 
 @interface MSGraphIdentityContainer()
 {
-    MSGraphConditionalAccessRoot* _conditionalAccess;
 }
 @end
 
@@ -27,19 +26,5 @@
     }
     return self;
 }
-- (MSGraphConditionalAccessRoot*) conditionalAccess
-{
-    if(!_conditionalAccess){
-        _conditionalAccess = [[MSGraphConditionalAccessRoot alloc] initWithDictionary: self.dictionary[@"conditionalAccess"]];
-    }
-    return _conditionalAccess;
-}
-
-- (void) setConditionalAccess: (MSGraphConditionalAccessRoot*) val
-{
-    _conditionalAccess = val;
-    self.dictionary[@"conditionalAccess"] = val;
-}
-
 
 @end

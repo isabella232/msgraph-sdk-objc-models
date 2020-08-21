@@ -11,6 +11,7 @@
 @interface MSGraphChangeNotification : MSObject
 
 @property (nullable, nonatomic, setter=setChangeNotificationId:, getter=changeNotificationId) NSString* changeNotificationId;
+@property (nonatomic, setter=setSequenceNumber:, getter=sequenceNumber) int32_t sequenceNumber;
 @property (nonnull, nonatomic, setter=setSubscriptionId:, getter=subscriptionId) NSString* subscriptionId;
 @property (nonnull, nonatomic, setter=setSubscriptionExpirationDateTime:, getter=subscriptionExpirationDateTime) NSDate* subscriptionExpirationDateTime;
 @property (nullable, nonatomic, setter=setClientState:, getter=clientState) NSString* clientState;
